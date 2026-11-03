@@ -135,6 +135,13 @@
     text-shadow: 0 0 20px rgba(139,92,246,0.5);
   }
   .sub { text-align: center; color: var(--muted); font-size: 0.78rem; }
+  .news-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1rem; margin-top: 0.5rem; }
+  .news-item { background: rgba(139,92,246,0.06); border-radius: 14px; padding: 1rem; border: 1px solid rgba(139,92,246,0.1); transition: all 0.3s; }
+  .news-item:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,92,246,0.15); }
+  .news-emoji { font-size: 1.5rem; margin-bottom: 0.4rem; display: block; }
+  .news-title { font-weight: 700; font-size: 0.85rem; line-height: 1.3; margin-bottom: 0.3rem; }
+  .news-desc { color: var(--muted); font-size: 0.72rem; line-height: 1.5; }
+  .news-date { color: var(--accent); font-size: 0.65rem; margin-top: 0.5rem; display: block; opacity: 0.8; }
   .link {
     color: #a78bfa;
     text-decoration: none;
@@ -197,6 +204,48 @@
     <h2>💰 Coûts estimés</h2>
     <div class="cost">~$0.03 / jour</div>
     <p class="sub">Total tout confondu · estimation v1 (données simulées)</p>
+  </div>
+
+  <div class="card" style="animation-delay:0.3s">
+    <h2>🌐 Veille · Actu tech — 3 novembre</h2>
+    <div class="news-grid">
+      <div class="news-item">
+        <span class="news-emoji">🤖</span>
+        <div class="news-title">Figure 03 · robots humanoïdes autonomes</div>
+        <div class="news-desc">Les robots Figure 03 marchent seuls de l'usine au campus, sans assistance. Vidéo publiée par Brett Adcock.</div>
+        <span class="news-date">2 nov · the-ai.news</span>
+      </div>
+      <div class="news-item">
+        <span class="news-emoji">💰</span>
+        <div class="news-title">Robot Noetix à ¥9 998 (~$1 400)</div>
+        <div class="news-desc">Premier robot humanoïde sous la barre des $1 500, lancé en Chine. Prix grand public.</div>
+        <span class="news-date">1 nov · LavX News</span>
+      </div>
+      <div class="news-item">
+        <span class="news-emoji">🧠</span>
+        <div class="news-title">Infrastructure agents · modulaire</div>
+        <div class="news-desc">L'infrastructure d'agents IA se divise en composants interchangeables : retrieval, skills, mémoire.</div>
+        <span class="news-date">2 nov · dev.to</span>
+      </div>
+      <div class="news-item">
+        <span class="news-emoji">🔓</span>
+        <div class="news-title">GIMP 3.2.8 + KDE Plasma 6.9</div>
+        <div class="news-desc">GIMP améliore l'édition RTL, KDE prépare KWin boosté + intégration Firefox.</div>
+        <span class="news-date">2 nov · linuxiac.com</span>
+      </div>
+      <div class="news-item">
+        <span class="news-emoji">🖨️</span>
+        <div class="news-title">Boom impression 3D grand public</div>
+        <div class="news-desc">Bambu Lab démocratise l'impression 3D en Chine. Tronix3D lève $4M pour la défense/robotique.</div>
+        <span class="news-date">1 nov · multiple sources</span>
+      </div>
+      <div class="news-item">
+        <span class="news-emoji">⚖️</span>
+        <div class="news-title">Chine · loi IA full-lifecycle</div>
+        <div class="news-desc">La NDRC accélère la législation pour encadrer l'IA sur tout son cycle de vie.</div>
+        <span class="news-date">3 nov · aiweekly.co</span>
+      </div>
+    </div>
   </div>
 </main>
 
