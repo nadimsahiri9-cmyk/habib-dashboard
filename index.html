@@ -162,97 +162,184 @@
     main { grid-template-columns: 1fr; padding: 0.5rem 0.8rem 1.5rem; }
   }
 </style>
+
+<style>
+  .tabs { display:flex; gap:0.6rem; justify-content:center; margin:0 0 1.6rem; flex-wrap:wrap; }
+  .tab { background:var(--bg-card); border:1px solid rgba(139,92,246,0.25); border-radius:999px; padding:0.5rem 1.2rem; cursor:pointer; color:var(--muted); font-size:0.85rem; transition:all .2s; }
+  .tab.active { background:var(--accent-soft); border-color:var(--accent); color:#c4b5fd; font-weight:600; }
+  .tabpanel { display:none; } .tabpanel.active { display:block; }
+  .timeline { position:relative; margin:0.6rem 0 0 0.2rem; padding-left:1.4rem; border-left:2px solid rgba(139,92,246,0.3); }
+  .tl-item { position:relative; padding:0 0 1rem 0.6rem; }
+  .tl-item::before { content:''; position:absolute; left:-1.75rem; top:0.2rem; width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 6px var(--accent); }
+  .tl-date { font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0.15rem; }
+  .tl-title { font-weight:600; font-size:0.9rem; color:var(--text); }
+  .tl-desc { color:var(--muted); font-size:0.8rem; line-height:1.45; margin-top:0.2rem; }
+  .tl-tag { display:inline-block; font-size:0.65rem; padding:1px 8px; border-radius:10px; margin-left:0.4rem; vertical-align:middle; }
+  .tag-ia { background:rgba(88,166,255,0.15); color:#58a6ff; }
+  .tag-open { background:rgba(63,185,80,0.15); color:#3fb950; }
+  .tag-rob { background:rgba(240,136,62,0.15); color:#f0883e; }
+  .tag-rev { background:rgba(188,140,255,0.18); color:#bc8cff; }
+  .progress { background:rgba(139,92,246,0.15); border-radius:999px; height:10px; overflow:hidden; margin:0.4rem 0 0.2rem; }
+  .progress > div { background:linear-gradient(90deg,#a78bfa,#8b5cf6); height:100%; width:0%; border-radius:999px; }
+  .prod { display:flex; justify-content:space-between; align-items:center; padding:0.45rem 0; border-bottom:1px solid rgba(139,92,246,0.12); font-size:0.85rem; }
+  .prod:last-child { border-bottom:none; }
+  .prod .p-status { font-size:0.72rem; color:var(--muted); }
+</style>
 </head>
 <body>
 <header>
   <h1>🚀 Habib Dashboard</h1>
-  <p>Veille & monitoring — rien que pour Nadim</p>
-  <div class="status-pill"><span class="dot"></span> Système opérationnel · mis à jour 18 novembre 2026</div>
+  <p>Veille & pilotage — rien que pour Nadim</p>
+  <div class="status-pill"><span class="dot"></span> Système opérationnel · 18 novembre 2026</div>
 </header>
 <main>
-  <div class="card" style="animation-delay:0.05s">
-    <h2>⏰ Automations</h2>
-    <div class="row"><span class="label">💓 Heartbeat</span><span class="badge ok">✅ actif · chaque heure</span></div>
-    <div class="row"><span class="label">🧹 Autres crons</span><span class="badge warn">⛔ supprimés volontairement (18/11)</span></div>
-    <div class="row"><span class="label">🃏 Cartes workboard</span><span class="badge warn">sur GO Nadim uniquement</span></div>
+  <div class="tabs">
+    <button class="tab active" data-tab="veille">🔮 Veille</button>
+    <button class="tab" data-tab="revenus">💰 Revenus</button>
+    <button class="tab" data-tab="machine">⚙️ Machine</button>
   </div>
-  <div class="card" style="animation-delay:0.1s">
-    <h2>💾 Dernier backup</h2>
-    <div class="row"><span class="label">📅 Habib-backup (GitHub)</span><span class="value">2026-11-13</span></div>
-    <div class="row"><span class="label">🔗 Repo</span><a class="link" href="https://github.com/nadimsahiri9-cmyk/habib-backup" target="_blank" rel="noopener">Ouvrir →</a></div>
-  </div>
-  <div class="card" style="animation-delay:0.15s">
-    <h2>🤖 Sous-agents · 9 configurés</h2>
-    <div class="row"><span class="label">🏗️ Architecte (DeepSeek Pro)</span><span class="badge ok">✅ en ligne</span></div>
-    <div class="row"><span class="label">🛠️ Builder · produit les kits</span><span class="badge ok">✅ Real Estate Kit livré</span></div>
-    <div class="row"><span class="label">🔍 Researcher · veille niches</span><span class="badge ok">✅ en ligne</span></div>
-    <div class="row"><span class="label">📊 PM-Flowcraft / PM-Revenus</span><span class="badge ok">✅ en veille (heartbeat 0)</span></div>
-    <div class="row"><span class="label">🃏 Cartes · HP-Ops · Design</span><span class="badge ok">✅ en veille</span></div>
-    <div class="row"><span class="label">✍️ Scribe</span><span class="badge warn">supprimé le 18/11 (optimisation)</span></div>
-  </div>
-  <div class="card" style="animation-delay:0.2s">
-    <h2>💡 Dernières leçons</h2>
-    <div class="lesson">« Une anomalie visible peut être une décision : vérifier avant de "réparer" un cron disparu. »</div>
-    <div class="lesson">« Jamais de carte done sans preuve vérifiée (artefact/capture/log). »</div>
-    <div class="lesson">« Le dashboard d'une session vit avec la session : ne jamais supprimer une session sans vérifier ses widgets. »</div>
-  </div>
-  <div class="card" style="animation-delay:0.25s">
-    <h2>💰 Coûts OpenRouter</h2>
-    <div class="row"><span class="label">📈 Dernier snapshot connu</span><span class="value">2026-11-08 · ~102 $ cumulés</span></div>
-    <div class="row"><span class="label">🔑 Clé live</span><span class="badge warn">à reconnecter dans la config gateway</span></div>
-    <div class="row"><span class="label">🔗 Solde</span><a class="link" href="https://openrouter.ai/credits" target="_blank" rel="noopener">openrouter.ai/credits →</a></div>
-  </div>
-  <div class="card" style="animation-delay:0.3s">
-    <h2>🌐 Veille · Actu tech — 18 novembre</h2>
-    <div class="news-grid">
-      <div class="news-item">
-        <div class="news-title">Qwen4-Max : MoE 2,4 T avec 1M de contexte</div>
-        <div class="news-desc">Premier modèle de la génération Qwen4 (vision native, longues tâches agentiques). Les poids ouverts de la famille suivront — à surveiller pour du local.</div>
+
+  <div class="tabpanel active" id="tp-veille">
+    <div class="card">
+      <h2>🌐 Veille · Actu tech — 18 novembre</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">16 novembre <span class="tl-tag tag-ia">IA</span></div>
+          <div class="tl-title">Qwen4-Max : MoE 2,4 T avec 1M de contexte</div>
+          <div class="tl-desc">Premier modèle de la génération Qwen4 (vision native, tâches agentiques longues). Les poids ouverts de la famille suivront — à surveiller pour du local.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">12 novembre <span class="tl-tag tag-open">open source</span></div>
+          <div class="tl-title">Edge0-145B : un modèle de code 145B sur un seul GPU</div>
+          <div class="tl-desc">MoE open (10B actifs) qui tient en 29 Go de VRAM et bat DeepSeek-V4-Flash sur Terminal-Bench. Un modèle de code de haut niveau en local, sans facture API.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">13 novembre <span class="tl-tag tag-open">open source</span></div>
+          <div class="tl-title">Inkling 2 Small passe open source</div>
+          <div class="tl-desc">N°1 des modèles open US de l'Agent Arena, $0,26 par tâche (~5× moins cher que Kimi K3.1 Pro). La pression prix sur les modèles agents baisse vite.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">12 novembre <span class="tl-tag tag-ia">IA</span></div>
+          <div class="tl-title">Gemini 4 Hydrogen + Robotics 2.5</div>
+          <div class="tl-desc">Nouvelle génération LLM de Google le 12/11, robotique le 10/11. Google accélère sur l'agentique et la robotique.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">10-12 novembre <span class="tl-tag tag-open">open source</span></div>
+          <div class="tl-title">Bielik 11B v3.1 : 56 langues, agents skills</div>
+          <div class="tl-desc">L'open européen s'impose : 12 modèles ouverts sur 31 releases IA en novembre. La vague se referme sur les modèles propriétaires d'entrée de gamme.</div>
+        </div>
       </div>
-      <div class="news-item">
-        <div class="news-title">Edge0-145B : un modèle de code 145B open sur un seul GPU</div>
-        <div class="news-desc">MoE open (10B actifs) qui tient en 29 Go de VRAM et bat DeepSeek-V4-Flash sur Terminal-Bench. Un modèle de code de haut niveau en local, sans facture API.</div>
-      </div>
-      <div class="news-item">
-        <div class="news-title">Gemini 4 Hydrogen (Google) le 12/11</div>
-        <div class="news-desc">Nouvelle génération Gemini LLM + Gemini Robotics 2.5 le 10/11. Google accélère sur l'agentique et la robotique.</div>
-      </div>
-      <div class="news-item">
-        <div class="news-title">Inkling 2 Small passe open source</div>
-        <div class="news-desc">N°1 des modèles open US de l'Agent Arena, $0,26 par tâche (~5× moins cher que Kimi K3.1 Pro). La pression prix sur les modèles agents continue de baisser.</div>
-      </div>
-      <div class="news-item">
-        <div class="news-title">Bielik 11B v3.1 : l'open européen multiplie les langues</div>
-        <div class="news-desc">Le modèle polonais passe de 32 à 56 langues avec agents skills, Apache 2.0. La vague open de cette semaine est dense : 12 modèles ouverts sur 31 releases en novembre.</div>
-      </div>
-      <div class="news-item">
-        <div class="news-title">31 releases IA en novembre, 23 labs</div>
-        <div class="news-desc">Le rythme s'accélère encore : LLM (12), multimodal (7), image (3), vidéo (3). Le paysage open se referme vite sur les modèles propriétaires d'entrée de gamme.</div>
+    </div>
+    <div class="card">
+      <h2>🚀 Opportunités · Ce que ça change pour nous</h2>
+      <div class="news-grid">
+        <div class="news-item">
+          <div class="news-title">Kits n8n one-time $29-149 : ça marche</div>
+          <div class="news-desc">Le guide l8bites (15/10) confirme notre stratégie : niche étroite (« agents immobiliers » > « pour tous »), avant/après visible (« 3 h de saisie → 10 min »), vendre dans les budgets existants.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">Modèles locaux = créneau produit</div>
+          <div class="news-desc">Edge0-145B sur un GPU grand public ouvre des kits « IA auto-hébergée pour TPE » (install + config). Fort potentiel en Europe, sensibilité données.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">Freelance AI Automation : $20-40/h demandés</div>
+          <div class="news-desc">Upwork/Vollna débordent d'offres n8n/Make/agents cette semaine. 11 jobs remote collectés le 15/11. Le profil n8n+IA sérieux reste rare.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">Le goulot : la distribution, pas le produit</div>
+          <div class="news-desc">Constat du 18/11 : production OK, ventes ≈ 0 car zéro audience. Plan : fiche phare optimisée + posts quotidiens validés + mesure vues→ventes.</div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="card" style="animation-delay:0.35s">
-    <h2>🚀 Opportunités · Ce que ça change pour nous</h2>
-    <div class="news-grid">
-      <div class="news-item">
-        <div class="news-title">Les kits n8n one-time $29-149 se vendent (guide l8bites)</div>
-        <div class="news-desc">Conseils clés : niche étroite (« agents immobiliers » &gt; « pour tous »), avant/après visible (« 3 h de saisie → 10 min »), vendre dans les budgets existants. Nos kits Flowcraft sont alignés.</div>
-      </div>
-      <div class="news-item">
-        <div class="news-title">Modèles locaux = nouveau créneau produit</div>
-        <div class="news-desc">Edge0-145B sur un GPU grand public ouvre des kits « IA auto-hébergée pour TPE » (installation + config). Fort en Europe avec la sensibilité données.</div>
-      </div>
-      <div class="news-item">
-        <div class="news-title">Freelance AI Automation : $20-40/h en demande</div>
-        <div class="news-desc">Upwork et Vollna débordent d'offres n8n/Make/agents cette semaine. 11 jobs remote collectés le 15/11. Le profil n8n + IA reste rare côté offre sérieuse.</div>
-      </div>
-      <div class="news-item">
-        <div class="news-title">Le goulot n'est pas le produit : c'est la distribution</div>
-        <div class="news-desc">Constat du 18/11 : production OK, ventes ≈ 0 car zéro audience. Plan : fiche phare optimisée + posts quotidiens validés + mesure vues→ventes avant tout réinvestissement.</div>
+
+  <div class="tabpanel" id="tp-revenus">
+    <div class="card">
+      <h2>🎯 Objectif : première vente</h2>
+      <div class="progress"><div style="width:70%"></div></div>
+      <div class="tl-desc">Production terminée et fiche en préparation — 70 % du chemin. Prochain palier : publication fiche + premiers posts (validés par Nadim).</div>
+    </div>
+    <div class="card">
+      <h2>📦 Produits — état réel</h2>
+      <div class="prod"><span>💸 Payhip FlowcraftFR (8 produits)</span><span class="p-status"><span class="badge warn">⛔ encaissement bloqué</span></span></div>
+      <div class="tl-desc" style="padding:0 0 0.6rem">⚠️ CRITIQUE : PayPal/Stripe non connectés le 13/11 — « Seller is unable to receive payments ». Même un acheteur ne peut pas payer. À reconnecter AVANT toute pub.</div>
+      <div class="prod"><span>🛒 Gumroad micro-workflows (8 items)</span><span class="p-status">en ligne · pas de trafic</span></div>
+      <div class="prod"><span>🏠 Real Estate Listing Writer Kit</span><span class="p-status">produit fini 18/11 · fiche DRAFT</span></div>
+      <div class="prod"><span>📦 Autres kits du catalogue</span><span class="p-status">12 produits dans le workspace</span></div>
+    </div>
+    <div class="card">
+      <h2>🚀 Prochaines actions (validées par Nadim)</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">À faire — priorité 1</div>
+          <div class="tl-title">Connecter PayPal/Stripe sur Payhip</div>
+          <div class="tl-desc">Sans ça, aucune vente possible, même avec du trafic. Nadim doit connecter ses comptes (c'est lui le vendeur).</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">À faire — priorité 2</div>
+          <div class="tl-title">Fiche Gumroad Real Estate Kit à 19 $</div>
+          <div class="tl-desc">Prix de lancement minimum (décision Nadim : vendre). Titre orienté bénéfice, visuels, extrait gratuit.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">À faire — priorité 3</div>
+          <div class="tl-title">Distribution quotidienne (5 posts validés)</div>
+          <div class="tl-desc">Endroits où sont les agents immobiliers. Mesure vues→ventes pour savoir ce qui convertit.</div>
+        </div>
       </div>
     </div>
+  </div>
+
+  <div class="tabpanel" id="tp-machine">
+    <div class="card">
+      <h2>⏰ Automations</h2>
+      <div class="row"><span class="label">💓 Heartbeat</span><span class="badge ok">✅ actif · chaque heure</span></div>
+      <div class="row"><span class="label">🧹 Autres crons</span><span class="badge warn">⛔ supprimés volontairement (18/11)</span></div>
+      <div class="row"><span class="label">🃏 Cartes workboard</span><span class="badge warn">sur GO Nadim uniquement</span></div>
+    </div>
+    <div class="card">
+      <h2>💾 Dernier backup</h2>
+      <div class="row"><span class="label">📅 Habib-backup (GitHub)</span><span class="value">2026-11-13</span></div>
+      <div class="row"><span class="label">🔗 Repo</span><a class="link" href="https://github.com/nadimsahiri9-cmyk/habib-backup" target="_blank" rel="noopener">Ouvrir →</a></div>
+    </div>
+    <div class="card">
+      <h2>🤖 Sous-agents · 9 configurés</h2>
+      <div class="row"><span class="label">🏗️ Architecte (DeepSeek Pro)</span><span class="badge ok">✅ en ligne</span></div>
+      <div class="row"><span class="label">🛠️ Builder · produit les kits</span><span class="badge ok">✅ Real Estate Kit livré</span></div>
+      <div class="row"><span class="label">🔍 Researcher · veille niches</span><span class="badge ok">✅ en ligne</span></div>
+      <div class="row"><span class="label">📊 PM-Flowcraft / PM-Revenus</span><span class="badge ok">✅ en veille</span></div>
+      <div class="row"><span class="label">🃏 Cartes · HP-Ops · Design</span><span class="badge ok">✅ en veille</span></div>
+      <div class="row"><span class="label">✍️ Scribe</span><span class="badge warn">supprimé le 18/11</span></div>
+    </div>
+    <div class="card">
+      <h2>💡 Dernières leçons</h2>
+      <div class="lesson">« Une anomalie visible peut être une décision : vérifier avant de "réparer" un cron disparu. »</div>
+      <div class="lesson">« Jamais de carte done sans preuve vérifiée (artefact/capture/log). »</div>
+      <div class="lesson">« Le dashboard d'une session vit avec la session : ne jamais supprimer une session sans vérifier ses widgets. »</div>
+    </div>
+    <div class="card">
+      <h2>💰 Coûts OpenRouter</h2>
+      <div class="row"><span class="label">📈 Dernier snapshot connu</span><span class="value">2026-11-08 · ~102 $ cumulés</span></div>
+      <div class="row"><span class="label">🔑 Clé live</span><span class="badge warn">à reconnecter dans la config gateway</span></div>
+      <div class="row"><span class="label">🔗 Solde</span><a class="link" href="https://openrouter.ai/credits" target="_blank" rel="noopener">openrouter.ai/credits →</a></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1rem">
+    <h2>🎨 Flowcraft — projet actif</h2>
+    <div class="prod"><span>🏠 Real Estate Kit (produit phare)</span><span class="p-status">✅ produit, fiche en cours</span></div>
+    <div class="prod"><span>📒 Playbook infogérance VPS/Docker (act.7)</span><span class="p-status">GO noté · exécution en attente</span></div>
+    <div class="prod"><span>🧠 Idées en veille : 10 niches micro-SaaS (act.5)</span><span class="p-status">research terminé, à prioriser</span></div>
+    <div class="prod"><span>📚 Kit catalogue : 12 produits prêts ou en cours</span><span class="p-status">n8n-starter, stack-pro, claude-flow…</span></div>
   </div>
 </main>
-<footer>Habib · mise à jour 18 novembre 2026 16:45 UTC · veille quotidienne</footer>
+<footer>Habib · mise à jour 18 novembre 2026 · veille quotidienne · onglets + timeline v2</footer>
+<script>
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.tabpanel').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  document.getElementById('tp-'+t.dataset.tab).classList.add('active');
+}));
+</script>
 </body>
 </html>
