@@ -205,44 +205,19 @@
       <h2>🌐 Veille · Actu tech — 21 novembre</h2>
       <div class="timeline">
         <div class="tl-item">
-          <div class="tl-date">19-20 novembre <span class="tl-tag tag-ia">IA</span></div>
-          <div class="tl-title">Anthropic en bourse : la plus grande IPO US de l'histoire</div>
-          <div class="tl-desc">980 M de titres à 83 $, ~81 Md$ levés, valorisation ~1 400 Md$ sous le ticker ANT. Ouverture à 111,50 $, clôture à 97,17 $. La première pure-player IA cotée, avec une croissance Q3 de 47 % en séquence.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-date">18 novembre <span class="tl-tag tag-ia">IA</span></div>
-          <div class="tl-title">Google sort Gemini 4 Neon : 1M de contexte, 32 % moins cher par tâche</div>
-          <div class="tl-desc">Positionné entre Carbon et Hydrogen, 3ᵉ à l'Artificial Analysis Intelligence Index, ~110 tokens/s (2× plus rapide que Carbon). Prix 3 $/15 $ par million de tokens. La guerre des coûts est officiellement lancée.</div>
-        </div>
-        <div class="tl-item">
           <div class="tl-date">19 novembre <span class="tl-tag tag-ia">IA</span></div>
-          <div class="tl-title">GPT-6.2 Astra et Sol : coûts par tâche en chute, réactions mitigées</div>
-          <div class="tl-desc">OpenAI vend Astra comme son meilleur modèle d'éval pour moins d'un tiers du coût par tâche de GPT-6, prix tokens -20 %. Mais les power users grognent : « essentially unusable ». Qualité perçue vs tarification : le débat de la semaine.</div>
+          <div class="tl-title">OpenAI dissout son équipe robotique dédiée</div>
+          <div class="tl-desc">GPT-6.2 Astra prend la tête du benchmark AA-Robotics (79/100, 6/8 tâches physiques réussies en zero-shot sur un bras 6 axes), Sol suit à 78. Conclusion d'OpenAI : la robotique « n'est plus un problème spécial » — l'équipe dédiée est fusionnée dans la recherche principale, les modèles généraux pilotent les robots sans fine-tuning.</div>
         </div>
         <div class="tl-item">
-          <div class="tl-date">19 novembre <span class="tl-tag tag-ia">IA</span></div>
-          <div class="tl-title">Microsoft Ignite : 7 modèles MAI + programme « licensed weights »</div>
-          <div class="tl-desc">Microsoft vise explicitement l'entreprise avec des modèles moins chers qu'OpenAI/Anthropic et des poids licenciés personnalisables. Face à DeepSeek qui lève 15 Md$ et prépare son IPO à Shanghai, la scène IA se fragmente en trois blocs prix.</div>
+          <div class="tl-date">19 novembre <span class="tl-tag tag-rob">robotique</span></div>
+          <div class="tl-title">Boston Dynamics lance Stretch Gen 2</div>
+          <div class="tl-desc">Nouvelle génération du robot de déchargement de remorques autonome, avec d'importantes améliorations de fiabilité. La logistique reste le terrain de commercialisation le plus concret des robots mobiles industriels.</div>
         </div>
         <div class="tl-item">
-          <div class="tl-date">20 novembre <span class="tl-tag tag-open">open source</span></div>
-          <div class="tl-title">KVM Linux : CVE-2026-99312, une VM lit 127 Go de la mémoire de l'hôte</div>
-          <div class="tl-desc">Flaw découverte sur DigitalOcean (AMD) : un invité peut lire la mémoire de l'hôte. Correctif côté noyau ou désactiver la virtualisation imbriquée. Les hébergeurs KVM sur AMD doivent patcher cette semaine.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-date">16 novembre <span class="tl-tag tag-open">open source</span></div>
-          <div class="tl-title">NoisyTCP : 11 ans d'âge, crash possible des serveurs Linux par défaut</div>
-          <div class="tl-desc">Vulnérabilité du noyau Linux qui peut faire planter Nginx, Apache et SSH en config standard. La plupart des distros sont touchées : vulnérabilité transversale pour tout le parc serveur.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-date">17-18 novembre <span class="tl-tag tag-rob">robotique</span></div>
-          <div class="tl-title">Atlas de Boston Dynamics : premier client hors automobile (GlobalFoundries)</div>
-          <div class="tl-desc">Tests d'Atlas en fonderie de semi-conducteurs dès 2027, en plus de Spot déjà déployé. L'humanoïde industriel dépasse le cadre auto : nouvelle étape de commercialisation pour Boston Dynamics.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-date">17-18 novembre <span class="tl-tag tag-rob">robotique</span></div>
-          <div class="tl-title">APEC à Shenzhen : 151 humanoïdes dansent, les robots servent le café</div>
-          <div class="tl-desc">Record Guinness de danse synchronisée (ENGINEAI T800, contrôle de swarm à la milliseconde) ; 200 robots serveurs AI² Robotics déployés en Chine. La vitrine chinoise des humanoïdes devient un argument commercial.</div>
+          <div class="tl-date">19 novembre <span class="tl-tag tag-open">open source</span></div>
+          <div class="tl-title">ZeroSquare open-source 3 actifs d'IA incarnée</div>
+          <div class="tl-desc">Le modèle d'action ZERITH-V2.5, le framework agentique auto-évolutif ESI et le dataset d'interactions réelles ZERITH-H1-1K sont publiés. L'idée : transformer le fulfilment commercial en fabrique de données — la donnée robotique rare devient un sous-produit de l'activité.</div>
         </div>
       </div>
     </div>
@@ -250,20 +225,20 @@
       <h2>🚀 Opportunités · Ce que ça change pour nous</h2>
       <div class="news-grid">
         <div class="news-item">
-          <div class="news-title">Vague de failles serveur (KVM, NoisyTCP, PostgreSQL) = missions d'audit</div>
-          <div class="news-desc">KVM 9.x sur AMD, NoisyTCP, 52 failles Postgres en une semaine : les admins croulent. Notre playbook infogérance VPS/Docker (act.7) répond pile : audit + patch + vérification. Argument de vente chaud, cibler les petites structures.</div>
+          <div class="news-title">Robotique « logicielle » : kits et démos à portée de LLM</div>
+          <div class="news-desc">Astra/Sol pilotent des bras en zero-shot et ZeroSquare publie modèles + datasets open source. Le contrôle robotique entre dans le champ des automatisations vendables sans matériel exotique : à suivre pour une démo ou un kit orienté makers.</div>
         </div>
         <div class="news-item">
-          <div class="news-title">Modèles « entreprise pas cher » (MAI, Neon) : n8n à coût quasi nul</div>
-          <div class="news-desc">MAI de Microsoft positionné sous OpenAI/Anthropic en prix, Neon -32 %/tâche, Astra -20 %. Pour nos automatisations clients, le coût d'exécution des agents IA devient marginal : marges stables sur les kits et abonnements FlowcraftFR.</div>
+          <div class="news-title">Vendre des workflows n8n : setup + retainer, pas le JSON brut</div>
+          <div class="news-desc">Le constat des vendeurs : un template seul sur Gumroad vend presque rien ; ce qui se vend, c'est l'offre « setup clé en main + maintenance » (build 1 000-5 000 $ + retainer 200-1 500 $/mois). À intégrer dans le playbook infogérance (act.7) et la présentation des kits Flowcraft.</div>
         </div>
         <div class="news-item">
-          <div class="news-title">Le « jagged frontier » d'OpenAI : 46 % de tâches de recherche automatisées</div>
-          <div class="news-desc">Les agents de code finissent seuls 46 % des tâches de 2-4 h. La promesse « assistant autonome » devient mesurable : argument concret pour nos offres d'automatisation — démontrer, pas promettre. Devin passe aussi au VM macOS par session (iOS/macOS buildable).</div>
+          <div class="news-title">Nouvelles places de marché workflows avec escrow</div>
+          <div class="news-desc">Des marketplaces dédiées aux workflows n8n/Make/Zapier, bots et MCP (paiement bloqué jusqu'à livraison, produits 10-79 $) apparaissent. Canal complémentaire à Gumroad/Payhip pour nos micro-workflows — à tester une fois l'encaissement débloqué.</div>
         </div>
         <div class="news-item">
           <div class="news-title">Priorité inchangée : débloquer l'encaissement</div>
-          <div class="news-desc">La demande est là (patchs sécurité, agents abordables) mais ventes = 0 tant que PayPal/Stripe Payhip est bloqué et la fiche Gumroad en DRAFT. Nadim : connexion comptes = palier 1, toujours.</div>
+          <div class="news-desc">La demande est là (automatisations, kits, audits) mais ventes = 0 tant que PayPal/Stripe Payhip est bloqué. Nadim : connexion comptes = palier 1, toujours — avant toute nouvelle publication.</div>
         </div>
       </div>
     </div>
