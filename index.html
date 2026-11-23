@@ -339,7 +339,7 @@
       <div class="table-scroll">
         <table class="admin">
           <thead>
-            <tr><th>Dossier</th><th>Créancier / contact</th><th class="num">Montant</th><th class="num">Payé</th><th class="num">Restant</th><th>Statut</th><th>Dernière action</th></tr>
+            <tr><th>Dossier</th><th>Créancier / contact</th><th class="num">Montant</th><th class="num">Payé</th><th class="num">Restant</th><th class="num">Mensualité visée</th><th>Statut</th><th>Dernière action</th></tr>
           </thead>
           <tbody>
             <tr>
@@ -347,7 +347,7 @@
               <td>Huissier DELTEL</td>
               <td class="num">2 328,55 €</td>
               <td class="num">—</td>
-              <td class="num remaining">à confirmer</td>
+              <td class="num remaining">à confirmer</td><td class="num"><span class="badge warn">échel. en cours</span> selon tableau URSSAF</td>
               <td><span class="badge warn">Échéancier en cours</span><span class="statut">Échelonnement envoyé 30/10</span></td>
               <td>AR reçu 23/11 — attente retour avec tableau</td>
             </tr>
@@ -356,7 +356,7 @@
               <td>Huissier LAMBERT</td>
               <td class="num">4 625,00 €</td>
               <td class="num">1 600,00 €</td>
-              <td class="num remaining">≈ 3 025 €</td>
+              <td class="num remaining">≈ 3 025 €</td><td class="num">échéancier en cours (déjà engagé)</td>
               <td><span class="badge warn">Échéancier en cours</span><span class="statut">Échelonnement envoyé 30/10</span></td>
               <td>Attente retour huissier</td>
             </tr>
@@ -365,7 +365,7 @@
               <td>H2O (commissaire) · Trésor public</td>
               <td class="num">1 821,51 €</td>
               <td class="num">—</td>
-              <td class="num remaining">1 821,51 €</td>
+              <td class="num remaining">1 821,51 €</td><td class="num">à négocier — au plus bas</td>
               <td><span class="badge danger">Urgent</span><span class="statut">Saisies ATD 10 + 24/09/2026 (Caisse d'Épargne, Banque Postale) · mise en demeure 21/10/2026</span></td>
               <td>Détail : 750 € (600 € si -15 j) → majorée 1 500 € + frais. Photos reçues 23/11</td>
             </tr>
@@ -374,7 +374,7 @@
               <td>ANTAI · OMP Lille</td>
               <td class="num">135,00 €</td>
               <td class="num">—</td>
-              <td class="num remaining">à vérifier</td>
+              <td class="num remaining">à vérifier</td><td class="num">si rattrapage : viser le plus bas</td><td class="num">si rattrapage : viser le plus bas</td><td class="num">si rattrapage : viser le plus bas</td><td class="num">si rattrapage : viser le plus bas</td>
               <td><span class="badge warn">À vérifier</span><span class="statut">Possiblement majorée (délai 45 j dépassé)</span></td>
               <td>Photo reçue 23/11 — vérifier état sur amendes.gouv.fr</td>
             </tr>
@@ -392,7 +392,7 @@
               <td>Ville de Nice (Streeteo)</td>
               <td class="num">75,00 €</td>
               <td class="num">—</td>
-              <td class="num remaining">possiblement réglés</td>
+              <td class="num remaining">possiblement réglés</td><td class="num">—</td>
               <td><span class="badge warn">À vérifier</span><span class="statut">Anciens (09/2025)</span></td>
               <td>Photos reçues 23/11 — recouper avec justificatifs 10/2025</td>
             </tr>
@@ -419,7 +419,7 @@
               <td>Revolut</td>
               <td class="num">—</td>
               <td class="num">—</td>
-              <td class="num remaining">solde négatif</td>
+              <td class="num remaining">solde négatif</td><td class="num">—</td>
               <td><span class="badge warn">À régler</span><span class="statut">Alerte solde négatif 10 + 18/11</span></td>
               <td>Régularisation du solde</td>
             </tr>
@@ -427,6 +427,7 @@
         </table>
       </div>
       <p class="sub" style="text-align:left; margin-top:0.8rem">Récapitulatif indicative — montants et statuts mis à jour manuellement. Aucune pièce justificative stockée ici (repo public).</p>
+      <p class="sub" style="text-align:left">🎯 Stratégie 23/11 (Nadim) : tout rembourser par <strong>échelonnement mensuel au plus bas</strong>. BPCE / assurance mutuelle résiliée (non-paiement) : il reste à retrouver le courrier.</p>
     </div>
   </div>
 
