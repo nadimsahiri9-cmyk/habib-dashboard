@@ -184,6 +184,16 @@
   .prod { display:flex; justify-content:space-between; align-items:center; padding:0.45rem 0; border-bottom:1px solid rgba(139,92,246,0.12); font-size:0.85rem; }
   .prod:last-child { border-bottom:none; }
   .prod .p-status { font-size:0.72rem; color:var(--muted); }
+  .admin-updated { display:inline-flex; align-items:center; gap:0.45rem; background:var(--accent-soft); border:1px solid rgba(139,92,246,0.35); border-radius:999px; padding:0.3rem 0.9rem; font-size:0.75rem; color:#c4b5fd; margin:0 0 1rem; }
+  .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; border-radius:12px; border:1px solid rgba(139,92,246,0.15); }
+  table.admin { width:100%; min-width:640px; border-collapse:collapse; font-size:0.82rem; }
+  table.admin th { background:rgba(139,92,246,0.12); color:#a78bfa; text-align:left; padding:0.6rem 0.7rem; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.6px; white-space:nowrap; }
+  table.admin td { padding:0.6rem 0.7rem; border-top:1px solid rgba(255,255,255,0.05); vertical-align:top; color:var(--text); }
+  table.admin td.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; font-weight:600; }
+  table.admin td.num.remaining { color:#fbbf24; }
+  table.admin .dossier { font-weight:600; }
+  table.admin .dossier small { display:block; font-weight:400; color:var(--muted); font-size:0.72rem; margin-top:0.15rem; }
+  table.admin .statut { font-size:0.75rem; color:var(--muted); display:block; margin-top:0.2rem; }
 </style>
 </head>
 <body>
@@ -198,6 +208,7 @@
     <button class="tab" data-tab="revenus">💰 Revenus</button>
     <button class="tab" data-tab="machine">⚙️ Machine</button>
     <button class="tab" data-tab="supervision">👁 Supervision</button>
+    <button class="tab" data-tab="administratif">🗂️ Administratif</button>
   </div>
 
   <div class="tabpanel active" id="tp-veille">
@@ -299,6 +310,68 @@
       <div class="row"><span class="label">🏪 Payhip · FlowcraftFR (8 produits, 9-34 $)</span><a class="link" href="https://payhip.com/FlowcraftFR" target="_blank" rel="noopener">payhip.com/FlowcraftFR →</a></div>
       <div class="row"><span class="label">🛍️ Gumroad · boutique complète (9 produits)</span><a class="link" href="https://nadimix.gumroad.com/" target="_blank" rel="noopener">nadimix.gumroad.com →</a></div>
       <div class="row"><span class="label">🏪 Etsy</span><span class="badge warn">étape 3/5 · en attente Nadim</span></div>
+    </div>
+  </div>
+
+  <div class="tabpanel" id="tp-administratif">
+    <div class="card">
+      <h2>🗂️ Bureau administratif · Dossiers en cours</h2>
+      <span class="admin-updated">🕓 Dernière mise à jour : 23 novembre 2026</span>
+      <div class="table-scroll">
+        <table class="admin">
+          <thead>
+            <tr><th>Dossier</th><th>Créancier / contact</th><th class="num">Montant</th><th class="num">Payé</th><th class="num">Restant</th><th>Statut</th><th>Dernière action</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="dossier">URSSAF<small>huissier DELTEL · réf. 73634</small></td>
+              <td>Huissier DELTEL</td>
+              <td class="num">2 328,55 €</td>
+              <td class="num">1 147,00 €</td>
+              <td class="num remaining">≈ 1 180 €</td>
+              <td><span class="badge warn">Échéancier en cours</span><span class="statut">Échelonnement envoyé 30/10</span></td>
+              <td>AR reçu 23/11 — attente retour</td>
+            </tr>
+            <tr>
+              <td class="dossier">Copro Pierrefeu<small>huissier LAMBERT · C263356</small></td>
+              <td>Huissier LAMBERT</td>
+              <td class="num">4 625,00 €</td>
+              <td class="num">1 600,00 €</td>
+              <td class="num remaining">≈ 3 025 €</td>
+              <td><span class="badge warn">Échéancier en cours</span><span class="statut">Échelonnement envoyé 30/10</span></td>
+              <td>Attente retour huissier</td>
+            </tr>
+            <tr>
+              <td class="dossier">Amende Lille</td>
+              <td>H2O</td>
+              <td class="num">1 821,51 €</td>
+              <td class="num">—</td>
+              <td class="num remaining">à confirmer</td>
+              <td><span class="badge warn">À vérifier</span><span class="statut">Possible déjà réglé</span></td>
+              <td>Vérification avant paiement</td>
+            </tr>
+            <tr>
+              <td class="dossier">Amende Marseille</td>
+              <td>ACOE9</td>
+              <td class="num">35,00 €</td>
+              <td class="num">—</td>
+              <td class="num remaining">35,00 €</td>
+              <td><span class="badge warn">À vérifier</span><span class="statut">Probablement non payée</span></td>
+              <td>Vérification à faire</td>
+            </tr>
+            <tr>
+              <td class="dossier">Revolut Business</td>
+              <td>Revolut</td>
+              <td class="num">—</td>
+              <td class="num">—</td>
+              <td class="num remaining">solde négatif</td>
+              <td><span class="badge warn">À régler</span><span class="statut">Alerte solde négatif 10 + 18/11</span></td>
+              <td>Régularisation du solde</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="sub" style="text-align:left; margin-top:0.8rem">Récapitulatif indicative — montants et statuts mis à jour manuellement. Aucune pièce justificative stockée ici (repo public).</p>
     </div>
   </div>
 
