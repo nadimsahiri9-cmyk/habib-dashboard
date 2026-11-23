@@ -26,14 +26,14 @@
   .tabpanel.active { display:block; grid-column:1 / -1; min-width:0; }
 </style>
 <button class="tab" data-tab="administratif">🗂️ Administratif</button>
-  <div class="tabpanel" id="tp-administratif">
+    <div class="tabpanel" id="tp-administratif">
     <div class="card">
       <h2>🗂️ Bureau administratif · Dossiers en cours</h2>
       <span class="admin-updated">🕓 Dernière mise à jour : 23 novembre 2026</span>
       <div class="admin-kpis">
-        <div class="admin-kpi"><div class="kpi-val">2 747 €</div><div class="kpi-label">Payé</div></div>
-        <div class="admin-kpi"><div class="kpi-val">≈ 4 240 €</div><div class="kpi-label">Restant</div></div>
-        <div class="admin-kpi"><div class="kpi-val">1 821 €</div><div class="kpi-label">À vérifier (H2O)</div></div>
+        <div class="admin-kpi"><div class="kpi-val">1 600 €</div><div class="kpi-label">Payé (copro)</div></div>
+        <div class="admin-kpi"><div class="kpi-val">2 réponses</div><div class="kpi-label">En attente huissiers</div></div>
+        <div class="admin-kpi"><div class="kpi-val">1 856 €</div><div class="kpi-label">Amendes à vérifier</div></div>
         <div class="admin-kpi"><div class="kpi-val">5 dossiers</div><div class="kpi-label">En suivi</div></div>
       </div>
       <div class="table-scroll">
@@ -46,10 +46,10 @@
               <td class="dossier">URSSAF<small>huissier DELTEL · réf. 73634</small></td>
               <td>Huissier DELTEL</td>
               <td class="num">2 328,55 €</td>
-              <td class="num">1 147,00 €</td>
-              <td class="num remaining">≈ 1 180 €</td>
+              <td class="num">—</td>
+              <td class="num remaining">à confirmer</td>
               <td><span class="badge warn">Échéancier en cours</span><span class="statut">Échelonnement envoyé 30/10</span></td>
-              <td>AR reçu 23/11 — attente retour</td>
+              <td>AR reçu 23/11 — attente retour avec tableau</td>
             </tr>
             <tr>
               <td class="dossier">Copro Pierrefeu<small>huissier LAMBERT · C263356</small></td>
@@ -65,18 +65,18 @@
               <td>H2O</td>
               <td class="num">1 821,51 €</td>
               <td class="num">—</td>
-              <td class="num remaining">à confirmer</td>
-              <td><span class="badge warn">À vérifier</span><span class="statut">Possible déjà réglé</span></td>
-              <td>Vérification avant paiement</td>
+              <td class="num remaining">à vérifier</td>
+              <td><span class="badge warn">À vérifier</span><span class="statut">Possiblement ancienne / déjà réglée</span></td>
+              <td>Dédoublonnage photos à venir</td>
             </tr>
             <tr>
               <td class="dossier">Amende Marseille</td>
               <td>ACOE9</td>
               <td class="num">35,00 €</td>
               <td class="num">—</td>
-              <td class="num remaining">35,00 €</td>
-              <td><span class="badge warn">À vérifier</span><span class="statut">Probablement non payée</span></td>
-              <td>Vérification à faire</td>
+              <td class="num remaining">à vérifier</td>
+              <td><span class="badge warn">À vérifier</span><span class="statut">Possiblement ancienne / déjà réglée</span></td>
+              <td>Dédoublonnage photos à venir</td>
             </tr>
             <tr>
               <td class="dossier">Revolut Business</td>
