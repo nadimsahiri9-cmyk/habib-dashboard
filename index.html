@@ -197,7 +197,8 @@
   table.admin tbody tr:nth-child(even) { background:rgba(139,92,246,0.04); }
   table.admin tbody tr:hover { background:rgba(139,92,246,0.09); }
   table.admin td.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; font-weight:600; }
-  table.admin td.num.remaining { color:#fbbf24; }
+  table.admin td.num.remaining { color:#e2e2f0; }
+  table.admin .badge { background:transparent; border:1px solid rgba(255,255,255,0.18); color:#cfcfe4; }
   table.admin .dossier { font-weight:600; }
   table.admin .dossier small { display:block; font-weight:400; color:var(--muted); font-size:0.72rem; margin-top:0.15rem; }
   table.admin .statut { font-size:0.75rem; color:var(--muted); display:block; margin-top:0.2rem; }
@@ -333,7 +334,7 @@
         <div class="admin-kpi"><div class="kpi-val">1 600 €</div><div class="kpi-label">Payé (copro)</div></div>
         <div class="admin-kpi"><div class="kpi-val">2 réponses</div><div class="kpi-label">En attente huissiers</div></div>
         <div class="admin-kpi"><div class="kpi-val">1 821,51 €</div><div class="kpi-label">Urgent — H2O (saisie)</div></div>
-        <div class="admin-kpi"><div class="kpi-val">620 €</div><div class="kpi-label">Amendes à régler / vérifier</div></div>
+        <div class="admin-kpi"><div class="kpi-val">660 €+</div><div class="kpi-label">Amendes à régler (hors H2O)</div></div>
         <div class="admin-kpi"><div class="kpi-val">774,00 €</div><div class="kpi-label">Taxe foncière 2026</div></div>
         <div class="admin-kpi"><div class="kpi-val">11 dossiers</div><div class="kpi-label">En suivi</div></div>
       </div>
@@ -421,15 +422,15 @@
               <td>💳 Payer en ligne sur <a class="link" href="https://www.amendes.gouv.fr" target="_blank" rel="noopener">amendes.gouv.fr</a> ou demander un échelonnement (impots.gouv.fr / Trésor) — à ton choix</td>
             </tr>
             <tr>
-              <td class="dossier">Amende Marseille<small>ACOE9</small></td>
-              <td>ACOE9</td>
-              <td class="num">35,00 €</td>
+              <td class="dossier">Amende Marseille<small>arrêt gênant · Toyota AT-029-BF · avis 26/08/2025</small></td>
+              <td>ACOE9 · Trésor public</td>
+              <td class="num">75,00 €</td>
               <td class="num">—</td>
-              <td class="num remaining">à vérifier</td>
-              <td class="num">si rattrapage : au plus bas</td>
-              <td><span class="badge warn">À vérifier</span><span class="statut">Scan boîte mail 23/11 : avis ANTAI électronique confirmé (26/08/2025) mais AUCUNE preuve de paiement trouvée</span></td>
-              <td>Scan mail nadimsahiri9@gmail.com 23/11 — pas de reçu</td>
-              <td>Il manque juste la clé à 2 chiffres du coupon (réf 3336 6626 7797 41) pour vérifier sur amendes.gouv.fr</td>
+              <td class="num remaining">75,00 €</td>
+              <td class="num">à payer</td>
+              <td><span class="badge danger">Non payé</span><span class="statut">Aucune preuve de paiement (scan mail 23/11) · limite 10/10/2025 dépassée → majorée 75 €</span></td>
+              <td>Scan mail 23/11 : aucun reçu trouvé</td>
+              <td>Payer sur <a class="link" href="https://www.amendes.gouv.fr" target="_blank" rel="noopener">amendes.gouv.fr</a> (manque la clé 2 chiffres du coupon — réf 3336 6626 7797 41) ou via l'application</td>
             </tr>
             <tr>
               <td class="dossier">Avis ANTAI électroniques ×2<small>infractions 15/09/2025 + 02/01/2026 · trouvés dans le mail 23/11</small></td>
