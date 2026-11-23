@@ -164,10 +164,10 @@
 </style>
 
 <style>
-  .tabs { display:flex; gap:0.6rem; justify-content:center; margin:0 0 1.6rem; flex-wrap:wrap; }
+  .tabs { display:flex; gap:0.6rem; justify-content:center; margin:0 0 1.6rem; flex-wrap:wrap; grid-column:1 / -1; }
   .tab { background:var(--bg-card); border:1px solid rgba(139,92,246,0.25); border-radius:999px; padding:0.5rem 1.2rem; cursor:pointer; color:var(--muted); font-size:0.85rem; transition:all .2s; }
   .tab.active { background:var(--accent-soft); border-color:var(--accent); color:#c4b5fd; font-weight:600; }
-  .tabpanel { display:none; } .tabpanel.active { display:block; }
+  .tabpanel { display:none; } .tabpanel.active { display:block; grid-column:1 / -1; min-width:0; }
   .timeline { position:relative; margin:0.6rem 0 0 0.2rem; padding-left:1.4rem; border-left:2px solid rgba(139,92,246,0.3); }
   .tl-item { position:relative; padding:0 0 1rem 0.6rem; }
   .tl-item::before { content:''; position:absolute; left:-1.75rem; top:0.2rem; width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 6px var(--accent); }
@@ -185,15 +185,26 @@
   .prod:last-child { border-bottom:none; }
   .prod .p-status { font-size:0.72rem; color:var(--muted); }
   .admin-updated { display:inline-flex; align-items:center; gap:0.45rem; background:var(--accent-soft); border:1px solid rgba(139,92,246,0.35); border-radius:999px; padding:0.3rem 0.9rem; font-size:0.75rem; color:#c4b5fd; margin:0 0 1rem; }
+  .admin-kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0.7rem; margin:0 0 1.1rem; }
+  .admin-kpi { background:rgba(139,92,246,0.07); border:1px solid rgba(139,92,246,0.18); border-radius:14px; padding:0.75rem 0.9rem; text-align:center; }
+  .admin-kpi .kpi-val { font-size:1.15rem; font-weight:700; color:#c4b5fd; }
+  .admin-kpi .kpi-label { font-size:0.68rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-top:0.2rem; }
   .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; border-radius:12px; border:1px solid rgba(139,92,246,0.15); }
   table.admin { width:100%; min-width:640px; border-collapse:collapse; font-size:0.82rem; }
   table.admin th { background:rgba(139,92,246,0.12); color:#a78bfa; text-align:left; padding:0.6rem 0.7rem; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.6px; white-space:nowrap; }
   table.admin td { padding:0.6rem 0.7rem; border-top:1px solid rgba(255,255,255,0.05); vertical-align:top; color:var(--text); }
+  table.admin tbody tr:nth-child(even) { background:rgba(139,92,246,0.04); }
+  table.admin tbody tr:hover { background:rgba(139,92,246,0.09); }
   table.admin td.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; font-weight:600; }
   table.admin td.num.remaining { color:#fbbf24; }
   table.admin .dossier { font-weight:600; }
   table.admin .dossier small { display:block; font-weight:400; color:var(--muted); font-size:0.72rem; margin-top:0.15rem; }
   table.admin .statut { font-size:0.75rem; color:var(--muted); display:block; margin-top:0.2rem; }
+  @media (max-width:720px) {
+    table.admin { min-width:0; font-size:0.78rem; }
+    table.admin th:nth-child(2), table.admin td:nth-child(2),
+    table.admin th:nth-child(7), table.admin td:nth-child(7) { display:none; }
+  }
 </style>
 </head>
 <body>
@@ -317,6 +328,12 @@
     <div class="card">
       <h2>🗂️ Bureau administratif · Dossiers en cours</h2>
       <span class="admin-updated">🕓 Dernière mise à jour : 23 novembre 2026</span>
+      <div class="admin-kpis">
+        <div class="admin-kpi"><div class="kpi-val">2 747 €</div><div class="kpi-label">Payé</div></div>
+        <div class="admin-kpi"><div class="kpi-val">≈ 4 240 €</div><div class="kpi-label">Restant</div></div>
+        <div class="admin-kpi"><div class="kpi-val">1 821 €</div><div class="kpi-label">À vérifier (H2O)</div></div>
+        <div class="admin-kpi"><div class="kpi-val">5 dossiers</div><div class="kpi-label">En suivi</div></div>
+      </div>
       <div class="table-scroll">
         <table class="admin">
           <thead>
